@@ -33,8 +33,8 @@ class App extends Component {
     this.setState({ todos: todos });
   }
 
-  deleteTodo() {
-    console.log("clicked");
+  deleteTodo(index) {
+   console.log(index)
   }
 
   render() {
@@ -42,7 +42,7 @@ class App extends Component {
       <div className="App">
         <ul>
           { this.state.todos.map( (todo, index) =>
-            <ToDo key={ index }  description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) }/>
+            <ToDo key={ index }  description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } deleteTodo={ () => this.deleteTodo(index) }/>
           )}
         </ul>
         <form onSubmit={ (e) => this.handleSubmit(e) }>
