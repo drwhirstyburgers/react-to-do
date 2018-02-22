@@ -33,6 +33,9 @@ class App extends Component {
     this.setState({ todos: todos });
   }
 
+  deleteTodo() {
+    console.log("clicked");
+  }
 
   render() {
     return (
