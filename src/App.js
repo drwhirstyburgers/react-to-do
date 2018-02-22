@@ -34,7 +34,10 @@ class App extends Component {
   }
 
   deleteTodo(index) {
-   console.log(index)
+   const toDos = this.state.todos.filter( (todos) => {
+     return todos !== toDos
+   });
+   this.setState({ todos: toDos });
   }
 
   render() {
